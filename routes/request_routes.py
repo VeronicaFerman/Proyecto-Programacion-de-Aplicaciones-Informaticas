@@ -1,6 +1,9 @@
 from flask import render_template, redirect, request, session
 import requests
 from logic.request_logic import RequestLogic
+from logic.solicitudes_logic import SolicitudLogic
+
+
 
 class RequestRoutes:
     @staticmethod
@@ -22,3 +25,10 @@ class RequestRoutes:
                     selectedMessage = request.form["message"]
                     rows = logic.insertRequest(selectedName,selectedEmail,selectedBook,selectedYear,selectedAuthor,selectedMessage)
                     return render_template("request.html")
+    
+        @app.route("/requestView", methods=["GET"])
+        def requestView():
+            ReqLogic = SolicitudLogic
+            if request.method == "GET":
+                allRequests = ReqLogic.getAllSolicitudes()
+                return render_template("request.html", allRequests=allRequests)

@@ -65,6 +65,22 @@
                 <th>Autor</th>
                 <th>Mensaje</th>
             </tr>
+
+            {% for element in allRequests%}
+                <tbody>
+                    <tr>
+                      <td>{{ element["idrequest"] }}</td>
+                      <td>{{ element["User_name"] }}</td>
+                      <td>{{ element["User_email"] }}</td>
+                      <td>{{ element["Book_name"] }}</td>
+                      <td>{{ element["Book_year"] }}</td>
+                      <td>{{ element["Book_author"] }}</td>
+                      <td>{{ element["message"] }}</td>
+                      <td><a class="button" onclick="deleteBook(this.id)" id="{{ element["idrequest"] }}">Eliminar</a></td>
+                    </tr>
+                    
+                </tbody>
+            {% endfor %}
         </table>
     </div>
 

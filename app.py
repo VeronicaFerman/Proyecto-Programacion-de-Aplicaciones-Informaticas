@@ -43,11 +43,6 @@ def resumen():
     return render_template("resumen.html")
 
 
-@app.route("/requestView")
-def requestView():
-    return render_template("manejosolicitudes.html")
-
-
 @app.route("/modify")
 def modify():
     return render_template("modify.html")
