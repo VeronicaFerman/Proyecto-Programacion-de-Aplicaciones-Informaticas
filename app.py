@@ -38,10 +38,6 @@ def usuarios():
     return render_template("usuarios.html")
 
 
-@app.route("/resumen")
-def resumen():
-    return render_template("resumen.html")
-
 
 @app.route("/modify")
 def modify():
