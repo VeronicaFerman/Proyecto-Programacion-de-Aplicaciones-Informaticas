@@ -28,7 +28,15 @@ class RequestRoutes:
     
         @app.route("/requestView", methods=["GET"])
         def requestView():
-            ReqLogic = SolicitudLogic
+            ReqLogic = SolicitudLogic()
             if request.method == "GET":
                 allRequests = ReqLogic.getAllSolicitudes()
-                return render_template("request.html", allRequests=allRequests)
+                return render_template("manejosolicitudes.html", allRequests=allRequests)
+
+        @app.route("/requestView/delete/<int:id>", methods=["GET"])
+        def deleteSoli(id):
+            ReqLogic = SolicitudLogic()
+            id = id
+            if request.method == "GET":
+                rows = ReqLogic.deleteSolicitudesById(id)
+                return redirect("/requestView")

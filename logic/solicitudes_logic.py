@@ -32,7 +32,7 @@ class SolicitudLogic(PybaLogic):
 
     #Borrar solicitudes
    
-    def deleteSolicitudesByBook(self, idrequest):
+    def deleteSolicitudesById(self, idrequest):
         database = self.createDatabaseObj()
         sql = (
             "DELETE FROM `request`"

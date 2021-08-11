@@ -1,3 +1,9 @@
+//SOLICITUDES FUNCTIONALITY
+function deleteSoli(ReqId){
+  var id = ReqId
+  window.location = "/requestView/delete/"+id;
+}
+
 // LIBRARY FUNCTIONALITY
 function bookSelected(bookId) {
     var bookTitle = bookId;
